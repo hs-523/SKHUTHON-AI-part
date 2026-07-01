@@ -23,7 +23,7 @@ class CaptionResponse(BaseModel):
     captions: List[Caption]
 
 # ========================================================
-# ⚙️ [백엔드 전용 부품] 이미지 바이트 배열을 받아 키워드 리스트 반환
+#[백엔드 전용] 이미지 바이트 배열을 받아 키워드 리스트 반환
 # ========================================================
 def extract_keywords_from_multiple_images(image_bytes_list: List[bytes]) -> List[str]:
     contents_list = []
@@ -62,7 +62,7 @@ def extract_keywords_from_multiple_images(image_bytes_list: List[bytes]) -> List
     return json.loads(response.text)['keywords']
 
 # ========================================================
-# ⚙️ [백엔드 전용 부품] 이미지 바이트 + 태그를 받아 캡션 리스트 반환
+# [백엔드 전용] 이미지 바이트 + 태그를 받아 캡션 리스트 반환
 # ========================================================
 def generate_scripts_from_multiple_images(image_bytes_list: List[bytes], selected_tags: List[str]) -> List[Caption]:
     contents_list = []
@@ -153,7 +153,7 @@ def generate_scripts_from_multiple_images(image_bytes_list: List[bytes], selecte
 
 
 # ========================================================
-# 💻 [로컬 테스트 구역]
+# [로컬 테스트]
 # ========================================================
 if __name__ == "__main__":
     target_images = ["lt1.jpg", "lt2.jpg"]
